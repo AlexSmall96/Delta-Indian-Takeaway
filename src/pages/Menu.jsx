@@ -1,17 +1,25 @@
 import React, { useEffect, useState } from "react"
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Form } from "react-bootstrap";
 import menuItems from '../data'
+import useWindowDimensions from "../hooks/useWindowDimensions";
 
 const Menu = () => {
     // Initialise state variables
     const [category, setCategory] = useState('NON VEGETARIAN STARTERS')
     const [items, setItems] = useState([])
 
+    // Initalise width using hook
+    const { width } = useWindowDimensions()
+
     // Use effect to update items shown when category changes
     useEffect(() => {
         setItems(menuItems.filter(item => item.category === category))
     }, [category])
 
+    // Handle form change for small screens
+    const handleChange = (event) => {
+        setCategory(event.target.value)
+    }
 
     // Define menu categories array
     const categories = [
@@ -44,9 +52,17 @@ const Menu = () => {
                 Please ask a member of staff when placing your order. Thank you.
             </p>
             {/* MENU CATEGORIES */}
-            <Row>
-                {categories.map(cat => <Col md='2' onClick={() => setCategory(cat)}>{cat}</Col>)}
-            </Row>
+            {width >= 768?
+                /* LIST FOR LARGE SCREENS */
+                <Row>
+                    {categories.map(cat => <Col md='2' onClick={() => setCategory(cat)}>{cat}</Col>)}
+                </Row>
+
+            :   
+                /* DROPDOWN FOR SMALL SCREENS */ 
+                <Form.Select onChange={handleChange}>
+                    {categories.map(cat => <option>{cat}</option>)}
+                </Form.Select>}
             {/* MENU ITEMS */}
             <Row>
                 {items.map(item => 
