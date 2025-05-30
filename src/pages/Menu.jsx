@@ -1,10 +1,60 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
+import { Container, Row, Col } from "react-bootstrap";
+import menuItems from '../data'
 
 const Menu = () => {
+    // Initialise state variables
+    const [category, setCategory] = useState('NON VEGETARIAN STARTERS')
+    const [items, setItems] = useState([])
+
+    // Use effect to update items shown when category changes
+    useEffect(() => {
+        setItems(menuItems.filter(item => item.category === category))
+    }, [category])
+
+
+    // Define menu categories array
+    const categories = [
+        'NON VEGETARIAN STARTERS',
+        'VEGETARIAN STARTERS',
+        'TANDOORI DISHES',
+        'DELTA SPECIALITIES',
+        'DELTA CLASSICS',
+        'BIRYANI',
+        'MACH (FISH) DISHES',
+        'VEGETARIAN MAIN DISHES',
+        'EUROPEAN SELECTION',
+        'SABZI - SIDE DISHES',
+        'RICE',
+        'BREADS',
+        'POPADUMS AND CHUTNEYS',
+        'DESSERTS',
+        'BALTI & RECOMMENDED SET DINNERS'
+    ]
+
     return (
-        <div>
-          Menu
-        </div>
+        <Container>
+            {/* NOTE */}
+            <h3>FOOD ALLERGY?</h3>
+            <p>
+                Management advises that food prepared here may contain or have come in contact with peanuts, pine nuts, soybeans, 
+                milk, eggs, wheat, shellfish or fish. Therefore we cannot guarantee that traces of the above allergens are not present in our dishes.
+            </p>
+            <p>
+                Please ask a member of staff when placing your order. Thank you.
+            </p>
+            {/* MENU CATEGORIES */}
+            <Row>
+                {categories.map(cat => <Col md='2' onClick={() => setCategory(cat)}>{cat}</Col>)}
+            </Row>
+            {/* MENU ITEMS */}
+            <Row>
+                {items.map(item => 
+                <>
+                    <p>{item.name}, {item.description}, {item.price}</p>
+                </>)}
+            </Row>
+        </Container>
     )
 };
 
