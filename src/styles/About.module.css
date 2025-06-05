@@ -1,0 +1,29 @@
+.experience {
+    background-image: url();
+    background-size: cover;
+    color:white;
+    background:
+        linear-gradient(
+          rgba(0, 0, 0, 0.4), 
+          rgba(0, 0, 0, 0.4)
+        ),
+        url('https://res.cloudinary.com/dojzptdbc/image/upload/v1749133800/river_lfcj2b.avif');
+}
+
+.aboutText{
+    width: 50%;
+    min-width: 400px;
+    max-width: 600px;
+    white-space: normal;
+    overflow-wrap: break-word;
+    margin: auto;
+    font-size: small;
+    padding: 40px 0 80px 0;
+}
+
+@media screen and (max-width: 480px) {
+  .aboutText {
+    min-width: 0px;
+    width: 90%;
+  }
+}
