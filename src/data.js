@@ -1,7 +1,79 @@
+// Define menu categories array
+const categories = [
+    { 
+      name:'NON VEGETARIAN STARTERS', 
+      description: "Delta's Kebabs - fresh, boneless fish or meat, charcoal grilled and served with salad and sauce."
+    },
+    { 
+      name: 'VEGETARIAN STARTERS', 
+      description: ""
+    },
+    { 
+      name: 'TANDOORI DISHES', 
+      description: `
+        The Tandoori is a beehive shaped top opening earthen oven, fired with charcoal. 
+        In it we roast or bake various marinated meat, seafood, vegetables and breads. 
+        Tandoori foods are marinated in mildly spiced yogurt. 
+        They are low in calories, nutritious, delicious and easily digested. All tandoori dishes are served with mint sauce and salad. 
+      `
+    },
+    {
+      name: 'DELTA SPECIALITIES',
+      description: ""
+    },
+    { name: 'DELTA CLASSICS',
+      description: "Fresh lean chicken or lamb, prawn or king prawns served with a classic range of curry sauces."
+    },
+    {
+      name: 'BIRYANI',
+      description: `Grand festive dishes prepared from Basmati rice, chicken, lamb, king prawns or vegetables 
+      - cooked in Ghee (clarified butter) with delicate herbs and spices, served with a mixed vegetable curry sauce.`
+    },
+    { 
+      name: 'MACH (FISH) DISHES',
+      description: ""
+    },
+    {
+      name: 'VEGETARIAN MAIN DISHES',
+      description: ""
+    },
+    {
+      name: "EUROPEAN SELECTION",
+      description: "All dishes served with green salad, pomme frittes, mushrooms, fried onions and tomatoes."
+    },
+    {
+      name: 'SABZI - SIDE DISHES',
+      description: ""
+    },
+    {
+      name: "RICE",
+      description: ""
+    },
+    {
+      name: "BREAD",
+      description: "From our own bakery."
+    },
+    {
+      name: 'POPADUMS AND CHUTNEYS',
+      description: ""
+    },
+    {
+      name: 'DESSERTS',
+      description: ""
+    },
+    {
+      name: 'BALTI & RECOMMENDED SET DINNERS',
+      description: `Charcoal roasted chicken or lamb cutlets cooked in a medium strength sauce with chef's own special recipe. 
+      The great Balti is actually the bucket shaped iron pot used for cooking various meat and chicken dishes in Winter in India. 
+      It is usually eaten straight out of the pot with Tandoori Nan or Roti.`
+    }
+]
+
+// Data for menu page
 const menuItems = [
   {
     name: "Delta Special Chicken Pakora",
-    description: "Filleted pieces of chicken breast marinated in Delia's unique spices, coated in batter then deep fried until crispy yet succulent. Served with salad and hot sweet and sour sauce.",
+    description: "Filleted pieces of chicken breast marinated in Delta's unique spices, coated in batter then deep fried until crispy yet succulent. Served with salad and hot sweet and sour sauce.",
     price: "£5.50",
     category: "NON VEGETARIAN STARTERS"
   },
@@ -630,5 +702,23 @@ const menuItems = [
     category: "BALTI & RECOMMENDED SET DINNERS"
   }
 ]
+  // Home page images
+	const imageSrcs = [
+		'https://res.cloudinary.com/dojzptdbc/image/upload/v1749028792/delta-about_yxrldi.jpg',
+    'https://res.cloudinary.com/dojzptdbc/image/upload/v1749028792/IMG_3524_u5glad.jpg',
+    'https://res.cloudinary.com/dojzptdbc/image/upload/v1749028792/IMG_3528_bakdn7.jpg',
+    'https://res.cloudinary.com/dojzptdbc/image/upload/v1749028792/IMG_3532_ororhk.jpg',
+    'https://res.cloudinary.com/dojzptdbc/image/upload/v1749028792/IMG_3534_gf3qb2.jpg',
+    'https://res.cloudinary.com/dojzptdbc/image/upload/v1749028792/IMG_3540_t5k3tq.jpg',
+    'https://res.cloudinary.com/dojzptdbc/image/upload/v1749028793/IMG_3546_jqtlco.jpg',
+    'https://res.cloudinary.com/dojzptdbc/image/upload/v1749028793/IMG_3553_cvrufg.jpg',
+    'https://res.cloudinary.com/dojzptdbc/image/upload/v1749028793/IMG_3556_wqnnom.jpg',
+    'https://res.cloudinary.com/dojzptdbc/image/upload/v1749028794/IMG_3581_uyoiip.jpg',
+    'https://res.cloudinary.com/dojzptdbc/image/upload/v1749028793/IMG_3558_eilqga.jpg',
+    'https://res.cloudinary.com/dojzptdbc/image/upload/v1749028793/IMG_3561_wzvtxu.jpg',
+    'https://res.cloudinary.com/dojzptdbc/image/upload/v1749028794/IMG_3562_prb2nf.jpg',
+    'https://res.cloudinary.com/dojzptdbc/image/upload/v1749028794/IMG_3566_llpio2.jpg',
+    'https://res.cloudinary.com/dojzptdbc/image/upload/v1749028794/IMG_3576_spfzu2.jpg'
+	]
 
-export default menuItems
+export { categories, menuItems, imageSrcs } 

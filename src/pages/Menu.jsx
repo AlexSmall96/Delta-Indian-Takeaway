@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react"
 import { Container, Row, Col, Form } from "react-bootstrap";
-import menuItems from '../data'
+import { menuItems, categories } from '../data'
 import useWindowDimensions from "../hooks/useWindowDimensions";
+import MenuItem from "../components/MenuItem";
+import styles from '../styles/Menu.module.css';
 
 const Menu = () => {
     // Initialise state variables
-    const [category, setCategory] = useState('NON VEGETARIAN STARTERS')
+    const [category, setCategory] = useState(categories[0])
     const [items, setItems] = useState([])
 
     // Initalise width using hook
@@ -13,32 +15,13 @@ const Menu = () => {
 
     // Use effect to update items shown when category changes
     useEffect(() => {
-        setItems(menuItems.filter(item => item.category === category))
+        setItems(menuItems.filter(item => item.category === category.name))
     }, [category])
 
     // Handle form change for small screens
     const handleChange = (event) => {
-        setCategory(event.target.value)
+        setCategory(categories.filter(cat => cat.name === event.target.value)[0])
     }
-
-    // Define menu categories array
-    const categories = [
-        'NON VEGETARIAN STARTERS',
-        'VEGETARIAN STARTERS',
-        'TANDOORI DISHES',
-        'DELTA SPECIALITIES',
-        'DELTA CLASSICS',
-        'BIRYANI',
-        'MACH (FISH) DISHES',
-        'VEGETARIAN MAIN DISHES',
-        'EUROPEAN SELECTION',
-        'SABZI - SIDE DISHES',
-        'RICE',
-        'BREADS',
-        'POPADUMS AND CHUTNEYS',
-        'DESSERTS',
-        'BALTI & RECOMMENDED SET DINNERS'
-    ]
 
     return (
         <Container>
@@ -54,21 +37,28 @@ const Menu = () => {
             {/* MENU CATEGORIES */}
             {width >= 768?
                 /* LIST FOR LARGE SCREENS */
-                <Row>
-                    {categories.map(cat => <Col md='2' onClick={() => setCategory(cat)}>{cat}</Col>)}
-                </Row>
-
+                <>
+                    <Row>
+                        {categories.map(cat => <Col md='2' onClick={() => setCategory(cat)}>{cat.name}</Col>)}
+                    </Row>
+                    <Row className={styles.title}>
+                        <h5>{category.name}</h5>
+                    </Row>
+                </>
             :   
                 /* DROPDOWN FOR SMALL SCREENS */ 
                 <Form.Select onChange={handleChange}>
-                    {categories.map(cat => <option>{cat}</option>)}
+                    {categories.map(cat => <option>{cat.name}</option>)}
                 </Form.Select>}
+            {/* CATEGORY DESCRIPTION */}
+            <Row className={styles.description}>
+                {category.description}
+            </Row>
             {/* MENU ITEMS */}
             <Row>
                 {items.map(item => 
-                <>
-                    <p>{item.name}, {item.description}, {item.price}</p>
-                </>)}
+                    <MenuItem item={item} />
+                )}
             </Row>
         </Container>
     )

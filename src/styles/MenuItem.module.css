@@ -1,0 +1,42 @@
+/* 
+The styling for this component was inspired by the following article
+https://stackoverflow.com/questions/4978090/3-divs-middle-div-needs-to-be-a-variable-length-dotted-line
+*/
+
+.item{
+  display: flex;
+  text-align: left;
+}
+
+.itemName{
+  flex: 0 0 auto;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.itemPrice {
+    flex: 0 0 auto;
+    font-style: italic;
+}
+
+.itemDescription{
+    display: flex;
+    font-style: italic;
+    width:90%;
+    font-size: small;
+    text-align: left;
+}
+
+.dotted{
+  flex: 1 1 auto;
+  position: relative;
+}
+
+.dotted:before{
+  position:absolute;
+  bottom: 5px;
+  width: 94%;
+  border-bottom: 1px dotted #000;
+  content: '';
+  left: 3%;
+}
