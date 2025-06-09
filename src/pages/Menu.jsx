@@ -4,6 +4,7 @@ import { menuItems, categories } from '../data'
 import useWindowDimensions from "../hooks/useWindowDimensions";
 import MenuItem from "../components/MenuItem";
 import styles from '../styles/Menu.module.css';
+import appStyles from '../App.module.css'
 
 const Menu = () => {
     // Initialise state variables
@@ -24,22 +25,24 @@ const Menu = () => {
     }
 
     return (
-        <Container>
+        <Container className={appStyles.largeVerticalMargin}>
             {/* NOTE */}
-            <h3>FOOD ALLERGY?</h3>
-            <p>
-                Management advises that food prepared here may contain or have come in contact with peanuts, pine nuts, soybeans, 
-                milk, eggs, wheat, shellfish or fish. Therefore we cannot guarantee that traces of the above allergens are not present in our dishes.
-            </p>
-            <p>
-                Please ask a member of staff when placing your order. Thank you.
-            </p>
+            <div className={styles.notice}>
+                <h4>FOOD ALLERGY?</h4>
+                <p>
+                    Management advises that food prepared here may contain or have come in contact with peanuts, pine nuts, soybeans, 
+                    milk, eggs, wheat, shellfish or fish. Therefore we cannot guarantee that traces of the above allergens are not present in our dishes.
+                </p>
+                <p className={appStyles.largeVerticalMargin}>
+                    <em>Please ask a member of staff when placing your order. Thank you.</em>
+                </p>
+            </div>
             {/* MENU CATEGORIES */}
             {width >= 768?
                 /* LIST FOR LARGE SCREENS */
                 <>
                     <Row>
-                        {categories.map(cat => <Col md='2' onClick={() => setCategory(cat)}>{cat.name}</Col>)}
+                        {categories.map(cat => <Col className={category.name === cat.name? styles.selected : styles.category} md='2' onClick={() => setCategory(cat)}>{cat.name}</Col>)}
                     </Row>
                     <Row className={styles.title}>
                         <h5>{category.name}</h5>

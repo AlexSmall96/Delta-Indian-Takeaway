@@ -567,49 +567,49 @@ const menuItems = [
     name: "Nan",
     description: "Leavened bread baked in our clay oven.",
     price: "£3",
-    category: "BREADS"
+    category: "BREAD"
   },
   {
     name: "Peshwari Nan",
     description: "Leavened bread stuffed with ground almonds and sultanas.",
     price: "£3.50",
-    category: "BREADS"
+    category: "BREAD"
   },
   {
     name: "Keema Nan",
     description: "Leavened bread stuffed with spiced minced meat.",
     price: "£3.50",
-    category: "BREADS"
+    category: "BREAD"
   },
   {
     name: "Garlic Nan",
     description: "Leavened bread coated with fresh garlic and coriander.",
     price: "£3.50",
-    category: "BREADS"
+    category: "BREAD"
   },
   {
     name: "Paratha",
     description: "Fried layered whole wheat bread.",
     price: "£3.50",
-    category: "BREADS"
+    category: "BREAD"
   },
   {
     name: "Puri",
     description: "Puffed deep fried bread.",
     price: "£1.30",
-    category: "BREADS"
+    category: "BREAD"
   },
   {
     name: "Tandoori Roti",
     description: "Unleavened wholemeal bread baked in our clay oven.",
     price: "£3",
-    category: "BREADS"
+    category: "BREAD"
   },
   {
     name: "Chapati",
     description: "Thin unleavened wholemeal bread.",
     price: "£1.20",
-    category: "BREADS"
+    category: "BREAD"
   },
   {
     name: "Plain Popadum",

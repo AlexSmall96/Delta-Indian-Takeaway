@@ -1,7 +1,12 @@
 .App {
   text-align: center;
+  background-color: rgb(247, 247, 237)
 }
 
 .horizMargin{
-  margin-left: 20px;
+  margin-left: 35px;
+}
+
+.largeVerticalMargin {
+  margin-bottom: 50px;
 }

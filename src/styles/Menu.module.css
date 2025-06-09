@@ -1,9 +1,19 @@
+.notice {
+    font-size: small;
+    width: 50%;
+    margin: auto;
+    min-width: 400px;
+    max-width: 600px;
+}
+
 .category {
-    padding-left: 0px;
-    padding-right: 0px;
-    margin-top: 10px;
-    color: rgb(228, 87, 87);
+    color: rgba(204, 82, 82, 0.63);
     font-weight: 500;
+}
+
+.selected {
+    color: rgb(190, 23, 23);
+    font-weight: 500;  
 }
 
 .description {
@@ -15,10 +25,11 @@
 }
 
 .title{
+    color: rgb(190, 23, 23);
     text-align: left;
     border-style: solid;
     border-width: 2px 0 2px 0;
     border-color: black;
     padding: 10px 0 10px 0px;
-    margin-top: 30px;
+    margin-top: 50px;
 }
