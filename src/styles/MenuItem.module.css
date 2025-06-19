@@ -1,5 +1,4 @@
-/* 
-The styling for this component was inspired by the following article
+/* The styling for this component was inspired by the following article
 https://stackoverflow.com/questions/4978090/3-divs-middle-div-needs-to-be-a-variable-length-dotted-line
 */
 
@@ -27,6 +26,11 @@ https://stackoverflow.com/questions/4978090/3-divs-middle-div-needs-to-be-a-vari
     text-align: left;
 }
 
+.icons {
+    text-align: left;
+    color: rgb(211, 34, 34);
+}
+
 .dotted{
   flex: 1 1 auto;
   position: relative;
@@ -35,8 +39,17 @@ https://stackoverflow.com/questions/4978090/3-divs-middle-div-needs-to-be-a-vari
 .dotted:before{
   position:absolute;
   bottom: 5px;
-  width: 94%;
+  width: 96%;
   border-bottom: 1px dotted #000;
   content: '';
-  left: 3%;
+  left: 2%;
+}
+
+.vegetarian {
+  color: rgba(125, 177, 125, 0.89);
+  font-weight: bold
+}
+
+.spice {
+  margin-right: 10px;
 }
