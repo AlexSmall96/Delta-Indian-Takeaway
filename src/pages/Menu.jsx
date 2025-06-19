@@ -41,8 +41,8 @@ const Menu = () => {
             {width >= 768?
                 /* LIST FOR LARGE SCREENS */
                 <>
-                    <Row>
-                        {categories.map(cat => <Col className={category.name === cat.name? styles.selected : styles.category} md='2' onClick={() => setCategory(cat)}>{cat.name}</Col>)}
+                    <Row className="justify-content-md-center">
+                        {categories.map(cat => <Col className={category.name === cat.name? styles.selected : styles.category} key={cat.name} sm='auto' onClick={() => setCategory(cat)}>{cat.name}</Col>)}
                     </Row>
                     <Row className={styles.title}>
                         <h5>{category.name}</h5>
@@ -50,8 +50,8 @@ const Menu = () => {
                 </>
             :   
                 /* DROPDOWN FOR SMALL SCREENS */ 
-                <Form.Select onChange={handleChange}>
-                    {categories.map(cat => <option>{cat.name}</option>)}
+                <Form.Select onChange={handleChange} value={category.name}>
+                    {categories.map(cat => <option key={cat.name}>{cat.name}</option>)}
                 </Form.Select>}
             {/* CATEGORY DESCRIPTION */}
             <Row className={styles.description}>
@@ -60,7 +60,7 @@ const Menu = () => {
             {/* MENU ITEMS */}
             <Row>
                 {items.map(item => 
-                    <MenuItem item={item} />
+                    <MenuItem key={item.name} item={item} />
                 )}
             </Row>
         </Container>
