@@ -1,0 +1,8 @@
+.carouselWrapper {
+    margin-top: 100PX;
+    min-height: 500px;
+}
+
+.carouselChild{
+    margin: 0 10px;
+}
