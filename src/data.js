@@ -82,7 +82,7 @@ const menuItems = [
 	},
 	{
 		name: "Fish Pakora",
-		description: null,
+		description: "Fresh, boneless fish pakoras served with salad and mint sauce.",
 		price: "£5.50",
 		category: "NON VEGETARIAN STARTERS"
 	},
