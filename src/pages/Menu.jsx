@@ -51,7 +51,7 @@ const Menu = () => {
             :   
                 /* DROPDOWN FOR SMALL SCREENS */ 
                 <Form.Select onChange={handleChange} value={category.name}>
-                    {categories.map(cat => <option key={cat.name}>{cat.name}</option>)}
+                    {categories.map(cat => <option key={cat.name} className={styles.option}>{cat.name}</option>)}
                 </Form.Select>}
             {/* CATEGORY DESCRIPTION */}
             <Row className={styles.description}>

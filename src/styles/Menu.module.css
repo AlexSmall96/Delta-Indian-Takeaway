@@ -16,6 +16,10 @@
     font-weight: 500;  
 }
 
+.category:hover, .option:hover{
+    cursor: pointer;
+}
+
 .description {
     text-align: left;
     margin: auto;
