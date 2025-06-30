@@ -1,17 +1,20 @@
 import React, {useEffect, useState} from 'react';
 import { Navbar, Nav, Image, NavDropdown, Offcanvas, Col, Container, Row, Card} from 'react-bootstrap'
 import appStyles from '../App.module.css'
+import styles from '../styles/NavBar.module.css'
+import useWindowDimensions from '../hooks/useWindowDimensions';
 
 const NavBar = () => {
 
     // Initialize state variables
     const [expanded, setExpanded] = useState(false)
+    const { width } = useWindowDimensions()
 
-    // useEffect(() => {
-    //     if (width > 767){
-    //         setExpanded(false)
-    //     }
-    // }, [width])
+    useEffect(() => {
+        if (width > 767){
+            setExpanded(false)
+        }
+    }, [width])
 
     // Ensure nav bar is collapsed when user clicks another part of screen
     document.addEventListener('mouseup', (event) => {
@@ -26,12 +29,10 @@ const NavBar = () => {
 
 
     return (
-        <Navbar expand={'md'} expanded={expanded} sticky='top'>
+        <Navbar expand={'md'} expanded={expanded} sticky='top' className={styles.navbar}>
             {/* LOGO */}
             <Navbar.Brand href="/">
-                <h3 className={appStyles.horizMargin}>
-                    Delta Indian Takeaway
-                </h3>
+                <Image src='https://res.cloudinary.com/dojzptdbc/image/upload/v1749027827/delta_logo2_qi3w7r.png' width={105} className={appStyles.horizMargin} />
             </Navbar.Brand>
             {/* HAMBURGER MENU TO EXPAND/COLLAPSE */}
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-md`} onClick={() => setExpanded(true)}/>
