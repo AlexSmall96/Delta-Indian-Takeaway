@@ -10,7 +10,8 @@ const API_KEY = process.env.STATIC_MAP_API_KEY;
 
 // Define proxy server to get google maps image
 app.get('/map', async (req, res) => {
-	const mapUrl = `https://maps.googleapis.com/maps/api/staticmap?center=27+Roseburn+Terrace,Edinburgh&zoom=16&size=2000x200&scale=4&maptype=roadmap&style=feature:poi|visibility:off&key=${API_KEY}`;
+	const type = req.query.type
+	const mapUrl = `https://maps.googleapis.com/maps/api/staticmap?center=27+Roseburn+Terrace,Edinburgh&zoom=16&size=2000x200&scale=4&maptype=${type}&style=feature:poi|visibility:off&key=${API_KEY}`;
 	try {
 		const response = await axios.get(mapUrl, { responseType: 'arraybuffer' });
 		res.set('Content-Type', 'image/png');
