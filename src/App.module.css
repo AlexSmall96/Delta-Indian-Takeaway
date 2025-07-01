@@ -1,6 +1,7 @@
 .App {
   text-align: center;
-  background-color: rgb(247, 247, 237)
+  background-color: rgb(247, 247, 237);
+  font-family: "PT Serif", serif;
 }
 
 .horizMargin{
