@@ -1,7 +1,7 @@
 .App {
   text-align: center;
   background-color: rgb(247, 247, 237);
-  font-family: "PT Serif", serif;
+  font-family: "PT Serif", serif!important;
 }
 
 .horizMargin{
@@ -10,4 +10,8 @@
 
 .largeVerticalMargin {
   margin-bottom: 50px;
+}
+
+.blueFont {
+  color: rgb(6, 6, 131);
 }

@@ -1,5 +1,6 @@
 import React from "react"
 import styles from '../styles/MenuItem.module.css'
+import appStyles from '../App.module.css'
 
 const MenuItem = ({item}) => {
 
@@ -12,12 +13,12 @@ const MenuItem = ({item}) => {
     return (
         <>
             {/* ITEM NAME, DESCRIPTION & PRICE */}
-            <div className={styles.item}>
+            <div className={`${styles.item} ${appStyles.blueFont}`}>
                 <div className={styles.itemName}>{item.name}</div>
                 { showDots? <div className={styles.dotted}></div>: ''}
                 <div className={styles.itemPrice}>{item.price}</div>
             </div>
-            <p className={styles.itemDescription}>{item.description} <br /></p>
+            <p className={`${styles.itemDescription} ${appStyles.blueFont}`}>{item.description} <br /></p>
             {/* CHILLY & VG ICONS  */}
             <p className={styles.icons}>
                 {item.spice?

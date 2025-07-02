@@ -28,7 +28,7 @@ const Menu = () => {
         <Container className={appStyles.largeVerticalMargin}>
             {/* NOTE */}
             <div className={styles.notice}>
-                <h4>FOOD ALLERGY?</h4>
+                <h5><strong>FOOD ALLERGY?</strong></h5>
                 <p>
                     Management advises that food prepared here may contain or have come in contact with peanuts, pine nuts, soybeans, 
                     milk, eggs, wheat, shellfish or fish. Therefore we cannot guarantee that traces of the above allergens are not present in our dishes.
@@ -54,13 +54,13 @@ const Menu = () => {
                     {categories.map(cat => <option key={cat.name} className={styles.option}>{cat.name}</option>)}
                 </Form.Select>}
             {/* CATEGORY DESCRIPTION */}
-            <Row className={styles.description}>
+            <Row className={`${styles.description} ${appStyles.blueFont}`}>
                 {category.description}
             </Row>
             {/* MENU ITEMS */}
             <Row>
                 {items.map(item => 
-                    <MenuItem key={item.name} item={item} />
+                    <MenuItem key={item.name} item={item} className={styles.blueFont}/>
                 )}
             </Row>
         </Container>
