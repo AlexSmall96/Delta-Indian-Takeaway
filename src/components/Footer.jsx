@@ -35,12 +35,12 @@ const Footer = () => {
                     {/* FACEBOOK, GITHUB AND LINKEDIN LINKS */}
                     <Col sm={12} className={styles.author}> 
                         Website developed by Alex Small
-                        <a href='https://github.com/AlexSmall96' target="_blank"><i class="fa-brands fa-square-github fa-lg"></i></a>
-                        <a href='https://www.linkedin.com/in/alex-small-a8977116b/' target="_blank"><i class="fa-lg fa-brands fa-linkedin"></i></a>
+                        <a href='https://github.com/AlexSmall96' target="_blank"  rel="noreferrer"><i class="fa-brands fa-square-github fa-lg"></i></a>
+                        <a href='https://www.linkedin.com/in/alex-small-a8977116b/' target="_blank"  rel="noreferrer"><i class="fa-lg fa-brands fa-linkedin"></i></a>
                     </Col>
                     <Col sm={12}>
                         © 2025 Delta Indian Takeaway
-                        <a href='https://www.facebook.com/DeltaIndianTakeaway' target="_blank">
+                        <a href='https://www.facebook.com/DeltaIndianTakeaway' target="_blank"  rel="noreferrer">
                             <Image src='https://res.cloudinary.com/dojzptdbc/image/upload/v1749115399/facebook_logos_PNG19757_ck2ntz.png' width={20} />
                         </a>
                     </Col>

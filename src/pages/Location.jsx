@@ -36,7 +36,7 @@ const Location = () => {
 					<Button variant="light" onClick={() => setType('hybrid')}>Satellite</Button>
 				</ButtonGroup>
 				<Button className={styles.directions} variant='light'>
-					<a target='_blank' href='https://www.google.com/maps/dir//27+Roseburn+Terrace,+Edinburgh+EH12+5NG/@55.9484367,-3.2367662,16z/data=!4m8!4m7!1m0!1m5!1m1!1s0x4887c7accedae949:0xf44a5da22899ca4e!2m2!1d-3.2344121!2d55.9454082?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D'>Directions</a>
+					<a target='_blank'  rel="noreferrer" href='https://www.google.com/maps/dir//27+Roseburn+Terrace,+Edinburgh+EH12+5NG/@55.9484367,-3.2367662,16z/data=!4m8!4m7!1m0!1m5!1m1!1s0x4887c7accedae949:0xf44a5da22899ca4e!2m2!1d-3.2344121!2d55.9454082?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D'>Directions</a>
 				</Button>
 			</div>		
 		</>
