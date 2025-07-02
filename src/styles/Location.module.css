@@ -16,6 +16,10 @@
   }
 }
 
+.spinnerParent {
+    height: 500px;
+}
+
 .backgroundMap{
     background-size: cover;
     background-position: center;
