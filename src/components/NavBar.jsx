@@ -3,12 +3,14 @@ import { Navbar, Nav, Image, NavDropdown, Offcanvas, Col, Container, Row, Card} 
 import appStyles from '../App.module.css'
 import styles from '../styles/NavBar.module.css'
 import useWindowDimensions from '../hooks/useWindowDimensions';
+import { Link, useLocation } from 'react-router-dom';
 
 const NavBar = () => {
 
     // Initialize state variables
     const [expanded, setExpanded] = useState(false)
     const { width } = useWindowDimensions()
+    const location = useLocation();
 
     useEffect(() => {
         if (width > 767){
@@ -27,12 +29,11 @@ const NavBar = () => {
         setExpanded(false)
     }
 
-
     return (
         <Navbar expand={'md'} expanded={expanded} sticky='top' className={styles.navbar}>
             {/* LOGO */}
             <Navbar.Brand href="/">
-                <Image src='https://res.cloudinary.com/dojzptdbc/image/upload/v1749027827/delta_logo2_qi3w7r.png' width={105} className={appStyles.horizMargin} />
+                <Image src='https://res.cloudinary.com/dojzptdbc/image/upload/v1749027827/delta_logo2_qi3w7r.png' width={150} className={appStyles.horizMargin} />
             </Navbar.Brand>
             {/* HAMBURGER MENU TO EXPAND/COLLAPSE */}
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-md`} onClick={() => setExpanded(true)}/>
@@ -40,15 +41,16 @@ const NavBar = () => {
                 id={`offcanvasNavbar-expand-md`}
                 aria-labelledby={`offcanvasNavbarLabel-expand-md`}
                 placement="end"
+                className={styles.offcanvas}
             >
                 <Offcanvas.Header closeButton>
                 </Offcanvas.Header>
-                <Offcanvas.Body>
+                <Offcanvas.Body key={location.pathname}> 
                     <Nav className={`justify-content-end flex-grow-1 pe-3`}>
-                        <Nav.Link href='/' onClick={handleClick}>Home</Nav.Link>
-                        <Nav.Link href='/menu' onClick={handleClick}>Menu</Nav.Link>
-                        <Nav.Link href='/about' onClick={handleClick}>About</Nav.Link>
-                        <Nav.Link href='/location' onClick={handleClick}>Location</Nav.Link>
+                        <Nav.Link as={Link} className={`${location.pathname === '/'? 'active' : ''} ${styles.grey}`} to='/' onClick={handleClick}>Home</Nav.Link>
+                        <Nav.Link as={Link} className={`${location.pathname === '/menu'? 'active' : ''} ${styles.grey}`} to='/menu' onClick={handleClick}>Menu</Nav.Link>
+                        <Nav.Link as={Link} className={`${location.pathname === '/about'? 'active' : ''} ${styles.grey}`} to='/about' onClick={handleClick}>About</Nav.Link>
+                        <Nav.Link as={Link} className={`${location.pathname === '/location'? 'active' : ''} ${styles.grey}`} to='/location' onClick={handleClick}>Location</Nav.Link>
                     </Nav>
                 </Offcanvas.Body>
             </Navbar.Offcanvas>

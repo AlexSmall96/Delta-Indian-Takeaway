@@ -1,4 +1,15 @@
 .navbar {
     z-index: 1000;
     background-color: rgb(247, 247, 237);
+    font-size: x-large;
+    font-family: "PT Serif", serif!important;
+}
+
+.grey {
+    color: rgb(105, 104, 104);
+}
+
+.offcanvas {
+    font-family: "PT Serif", serif!important;
+    font-size: large;
 }
