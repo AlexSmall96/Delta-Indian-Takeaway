@@ -3,6 +3,14 @@
     min-height: 500px;
 }
 
+@media screen and (max-width: 767px) {
+   .carouselWrapper{
+        margin-top: 30px;
+        margin-bottom: 30px;     
+        min-height: 300px;
+    }
+}
+
 .carouselChild{
     margin: 0 10px;
 }
