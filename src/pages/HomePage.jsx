@@ -35,12 +35,12 @@ const HomePage = () => {
 		}
 
 		// Call updateVariables with different values depending on width
-		if (width <= 767){
-			updateVariables(1, 0.6, 15)
+		if (width < 576){
+			updateVariables(1, 0.6, 15) // 1 image per carousel item
 		} else if (width <= 991){
-			updateVariables(2, 0.3, 7, 2)
+			updateVariables(2, 0.3, 7, 2) // 2 images per carousel item
 		} else {
-			updateVariables(3, 0.2, 5, 3)
+			updateVariables(3, 0.2, 5, 3) // 3 images per carousel item
 		}
 	}, [width])
 	
@@ -50,7 +50,7 @@ const HomePage = () => {
 		animate: { opacity: 1 },
 		exit: { opacity: 0 },
 	}
-	
+
     return (
 		<motion.div variants={pageFade} initial="initial" animate="animate" exit="exit">
 			<div className={styles.carouselWrapper}>
@@ -63,13 +63,12 @@ const HomePage = () => {
 									{/* RENDER CURRENT IMAGES */}
 									{imageSrcs.slice(srcIndex, srcIndex + step).map(
 										src =>                     
-											<Col lg={4} md={6} xs={12} key={src}>
+											<Col lg={4} sm={6} xs={12} key={src}>
 												<Image src={src} height={imageHeight} />
 											</Col>
 									)}	
 								</Row>
 							</Container>
-
 						</Carousel.Item>
 					)}
 				</Carousel>
