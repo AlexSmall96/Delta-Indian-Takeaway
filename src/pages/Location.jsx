@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react"
 import styles from '../styles/Location.module.css'
 import { ButtonGroup, Button } from "react-bootstrap";
+import { motion } from 'framer-motion';
+
 const Location = () => {
 	
 	// Initialize map variables
@@ -22,8 +24,15 @@ const Location = () => {
 		fetchMap()
 	}, [type])
 
+	// Set values for page fade animation
+	const pageFade = {
+		initial: { opacity: 0 },
+		animate: { opacity: 1 },
+		exit: { opacity: 0 },
+	}
+
 	return (
-		<>	
+		<motion.div variants={pageFade} initial="initial" animate="animate" exit="exit">	
 			{/* INFORMATION ON LOCATION */}
 			<div className={styles.locationText}>
 				<h4>Come Visit Us</h4>
@@ -36,10 +45,10 @@ const Location = () => {
 					<Button variant="light" onClick={() => setType('hybrid')}>Satellite</Button>
 				</ButtonGroup>
 				<Button className={styles.directions} variant='light'>
-					<a target='_blank'  rel="noreferrer" href='https://www.google.com/maps/dir//27+Roseburn+Terrace,+Edinburgh+EH12+5NG/@55.9484367,-3.2367662,16z/data=!4m8!4m7!1m0!1m5!1m1!1s0x4887c7accedae949:0xf44a5da22899ca4e!2m2!1d-3.2344121!2d55.9454082?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D'>Directions</a>
+					<a target='_blank' rel="noreferrer" href='https://www.google.com/maps/dir//27+Roseburn+Terrace,+Edinburgh+EH12+5NG/@55.9484367,-3.2367662,16z/data=!4m8!4m7!1m0!1m5!1m1!1s0x4887c7accedae949:0xf44a5da22899ca4e!2m2!1d-3.2344121!2d55.9454082?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D'>Directions</a>
 				</Button>
 			</div>		
-		</>
+		</motion.div>
     )
 };
 

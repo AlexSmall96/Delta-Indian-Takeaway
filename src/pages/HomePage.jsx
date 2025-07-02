@@ -5,9 +5,9 @@ import Image from "../components/Image";
 import useWindowDimensions from "../hooks/useWindowDimensions";
 import { Col, Container, Row } from "react-bootstrap";
 import styles from '../styles/HomePage.module.css'
+import { motion } from 'framer-motion';
 
 const HomePage = () => {
-
 	// Initialise variables
 	const [index, setIndex] = useState(0) // Index for carousel
 	const [srcIndices, setSrcIndices] = useState([0, 3, 6, 9, 12]) // Indices for image sources - number of images shown in a carousel item depends on screen width
@@ -43,29 +43,38 @@ const HomePage = () => {
 			updateVariables(3, 0.2, 5, 3)
 		}
 	}, [width])
-
+	
+	// Set values for page fade animation
+	const pageFade = {
+		initial: { opacity: 0 },
+		animate: { opacity: 1 },
+		exit: { opacity: 0 },
+	}
+	
     return (
-		<div className={styles.carouselWrapper}>
-			{/* CAROUSEL */}
-			<Carousel activeIndex={index} onSelect={handleSelect} data-bs-theme="dark" indicators={false}>
-				{srcIndices.map(srcIndex => 
-					<Carousel.Item>
-						<Container>
-							<Row className={styles.carouselChild}>
-								{/* RENDER CURRENT IMAGES */}
-								{imageSrcs.slice(srcIndex, srcIndex + step).map(
-									src =>                     
-										<Col lg={4} md={6} xs={12} key={src}>
-											<Image src={src} height={imageHeight} />
-										</Col>
-								)}	
-							</Row>
-						</Container>
+		<motion.div variants={pageFade} initial="initial" animate="animate" exit="exit">
+			<div className={styles.carouselWrapper}>
+				{/* CAROUSEL */}
+				<Carousel activeIndex={index} onSelect={handleSelect} data-bs-theme="dark" indicators={false}>
+					{srcIndices.map(srcIndex => 
+						<Carousel.Item>
+							<Container>
+								<Row className={styles.carouselChild}>
+									{/* RENDER CURRENT IMAGES */}
+									{imageSrcs.slice(srcIndex, srcIndex + step).map(
+										src =>                     
+											<Col lg={4} md={6} xs={12} key={src}>
+												<Image src={src} height={imageHeight} />
+											</Col>
+									)}	
+								</Row>
+							</Container>
 
-					</Carousel.Item>
-				)}
-			</Carousel>
-		</div>
+						</Carousel.Item>
+					)}
+				</Carousel>
+			</div>
+		</motion.div>
     )
 };
 

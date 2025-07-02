@@ -1,10 +1,20 @@
 import React from "react"
 import styles from '../styles/About.module.css'
+import { motion } from 'framer-motion';
+
 
 const About = () => {
+
+	// Set values for page fade animation
+	const pageFade = {
+		initial: { opacity: 0 },
+		animate: { opacity: 1 },
+		exit: { opacity: 0 },
+	}
+
     return (
-    	<>
-		{/* DELTA EXPERIENCE AND BACKGROUND IMAGE */}
+    	<motion.div variants={pageFade} initial="initial" animate="animate" exit="exit">
+			{/* DELTA EXPERIENCE AND BACKGROUND IMAGE */}
       		<div className={styles.experience}>
           		<div className={styles.aboutText}>
           			<h3>The Delta Experience</h3>
@@ -22,7 +32,7 @@ const About = () => {
           			</p>
           		</div>
         	</div>   
-		{/* INFORMATION */}
+			{/* INFORMATION */}
           	<div className={styles.aboutText}>
             	<p>We are open 7 days a week serving great Indian food from 5:00pm to 11:00pm.</p>
             	<p>We are pleased to provide special Banquet Dinners for larger parties as part of our Outside Catering service. Please call 0131 346 8973 or 0131 347 8868 to speak to Management with your enquiry.</p>
@@ -33,8 +43,8 @@ const About = () => {
             	<p>Delta Indian Takeaway offers a delivery service for orders over £15 (£2 delivery charge applies).</p>
             	<p>This is not fast food and there may be a little delay as we prepare your meal to order. Please note that time given orders are only estimates. Enjoy the Delta Experience!</p>
             	<p>Call us now on 0131 346 8973 or 0131 347 8868 to place your order!</p>
-          </div>
-      </> 
+          	</div>
+      	</motion.div>
     )
 };
 

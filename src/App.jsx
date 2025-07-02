@@ -8,20 +8,25 @@ import About from './pages/About';
 import Location from './pages/Location';
 import Footer from './components/Footer';
 import styles from './App.module.css'
+import { AnimatePresence } from 'framer-motion';
+import { useLocation } from 'react-router-dom';
 
 function App() {
+
+	const location = useLocation();
+
 	return (
 		<div className={styles.App}>
-			<Router>
-				<NavBar />
-				<Switch>
-					<Route exact path='/' render={() => <HomePage />} />
-					<Route exact path='/menu' render={() => <Menu />} />
-					<Route exact path='/about' render={() => <About />} />
-					<Route exact path='/location' render={() => <Location />} />
+			<NavBar /> 
+			<AnimatePresence mode="wait">
+				<Switch location={location} key={location.pathname}>
+				<Route exact path='/' render={() => <HomePage />} />
+				<Route exact path='/menu' render={() => <Menu />} />
+				<Route exact path='/about' render={() => <About />} />
+				<Route exact path='/location' render={() => <Location />} />
 				</Switch>
-				<Footer />
-			</Router>
+			</AnimatePresence>
+			<Footer />
 		</div>
 	);
 }
