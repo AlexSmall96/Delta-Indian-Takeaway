@@ -6,6 +6,7 @@ import MenuItem from "../components/MenuItem";
 import styles from '../styles/Menu.module.css';
 import appStyles from '../App.module.css'
 import { motion } from 'framer-motion';
+import ScrollToTop from "../components/ScrollToTop";
 
 const Menu = () => {
     // Initialise state variables
@@ -72,6 +73,7 @@ const Menu = () => {
                         <MenuItem key={item.name} item={item} className={styles.blueFont}/>
                     )}
                 </Row>
+                <ScrollToTop />
             </Container>
         </motion.div>
     )
