@@ -10,6 +10,11 @@ require('dotenv').config();
 // Google static maps api key
 const API_KEY = process.env.STATIC_MAP_API_KEY;
 
+// Allow CORS to front end site
+app.use(cors({
+	origin: 'https://deltaindiantakeaway.onrender.com',
+}));
+
 // Define proxy server to get google maps image
 app.get('/map', async (req, res) => {
 	const type = req.query.type
@@ -32,11 +37,6 @@ app.get('/map', async (req, res) => {
 const buildPath = path.join(__dirname, 'build')
 
 app.use(express.static(buildPath))
-
-// Allow CORS to front end site
-app.use(cors({
-	origin: 'http://localhost:3000/',
-}));
 
 // gets the static files from the build folder
 app.get(/(.*)/, (req, res) => {
