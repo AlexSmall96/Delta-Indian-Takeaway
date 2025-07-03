@@ -8,11 +8,17 @@
           rgba(0, 0, 0, 0.4)
         ),
         url('https://res.cloudinary.com/dojzptdbc/image/upload/v1749133800/river_lfcj2b.avif');
+    overflow: hidden;
 }
 
 .header {
   margin-bottom: 30px;
 }
+
+.imageContainer {
+  max-width: 5000px;
+}
+
 .aboutText{
     width: 50%;
     min-width: 400px;
