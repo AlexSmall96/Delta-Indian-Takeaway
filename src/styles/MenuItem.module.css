@@ -22,7 +22,8 @@ https://stackoverflow.com/questions/4978090/3-divs-middle-div-needs-to-be-a-vari
     display: flex;
     font-style: italic;
     width:90%;
-    font-size: small;
+    font-size: 1rem;
+    margin-top: 5px;
     text-align: left;
 }
 
