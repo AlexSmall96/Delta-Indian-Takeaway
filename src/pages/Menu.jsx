@@ -37,7 +37,7 @@ const Menu = () => {
         <motion.div variants={pageFade} initial="initial" animate="animate" exit="exit">
             <Container className={appStyles.largeVerticalMargin}>
                 {/* NOTE */}
-                <div className={styles.notice}>
+                <div className={`${styles.notice} ${appStyles.smallOnDesktop}`}>
                     <h5><strong>FOOD ALLERGY?</strong></h5>
                     <p>
                         Management advises that food prepared here may contain or have come in contact with peanuts, pine nuts, soybeans, 

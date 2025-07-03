@@ -5,11 +5,16 @@
 }
 
 @media screen and (max-width: 576px) {
-	.App {
-		font-size: 18px;
+	html {
+		font-size: 20px!important;
 	}
 }
 
+@media screen and (min-width: 576px){
+	.smallOnDeskTop {
+		font-size: x-small;
+	}
+}
 
 .horizMargin{
   	margin-left: 35px;

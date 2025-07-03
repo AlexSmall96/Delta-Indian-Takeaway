@@ -1,5 +1,4 @@
 .notice {
-    font-size: clamp(0.84rem, 2.5vw, 1.25rem);
     width: 50%;
     margin: auto;
     min-width: 400px;

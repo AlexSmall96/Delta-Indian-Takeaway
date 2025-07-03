@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import styles from '../styles/Location.module.css'
+import appStyles from '../App.module.css'
 import { ButtonGroup, Button, Spinner } from "react-bootstrap";
 import { motion } from 'framer-motion';
 
@@ -36,7 +37,7 @@ const Location = () => {
 	return (
 		<motion.div variants={pageFade} initial="initial" animate="animate" exit="exit">	
 			{/* INFORMATION ON LOCATION */}
-			<div className={styles.locationText}>
+			<div className={`${styles.locationText} ${appStyles.smallOnDesktop}`}>
 				<h4>Come Visit Us</h4>
 				<p>We are located just steps away from the famous Murrayfield and Roseburn bars as well as a short walk away from Edinburgh's Murrayfield Stadium - the home of Scottish Rugby.</p>
 			</div>
