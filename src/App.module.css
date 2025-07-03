@@ -1,17 +1,24 @@
 .App {
-  text-align: center;
-  background-color: rgb(247, 247, 237);
-  font-family: "PT Serif", serif!important;
+	text-align: center;
+	background-color: rgb(247, 247, 237);
+	font-family: "PT Serif", serif!important;
 }
 
+@media screen and (max-width: 576px) {
+	.App {
+		font-size: 18px;
+	}
+}
+
+
 .horizMargin{
-  margin-left: 35px;
+  	margin-left: 35px;
 }
 
 .largeVerticalMargin {
-  margin-bottom: 50px;
+  	margin-bottom: 50px;
 }
 
 .blueFont {
-  color: rgb(6, 6, 131);
+  	color: rgb(6, 6, 131);
 }
