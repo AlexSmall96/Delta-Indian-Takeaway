@@ -1,8 +1,9 @@
 .navbar {
     z-index: 1000;
     background-color: rgb(247, 247, 237);
-    font-size: x-large;
+    font-size: 1.5rem;
     font-family: "PT Serif", serif!important;
+    padding-bottom: 30px;
 }
 
 .grey {
