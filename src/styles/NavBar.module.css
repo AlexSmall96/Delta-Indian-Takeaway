@@ -14,3 +14,9 @@
     font-family: "PT Serif", serif!important;
     font-size: large;
 }
+
+@media screen and (max-width: 767px){
+    .offcanvas{
+        font-size: x-large;
+    }
+}
