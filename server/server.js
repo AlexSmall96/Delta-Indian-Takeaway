@@ -1,5 +1,7 @@
 // Proxy server used to get static google map for background image of location page
 const express = require('express');
+const path = require('path')
+const cors = require('cors');
 const axios = require('axios');
 const app = express();
 const PORT = 3001;
@@ -25,6 +27,21 @@ app.get('/map', async (req, res) => {
 		res.status(500).send('Error fetching map');
 	}
 });
+
+// Define build path to render static files
+const buildPath = path.join(__dirname, '../build')
+
+app.use(express.static(buildPath))
+
+// Allow CORS to front end site
+app.use(cors({
+	origin: 'http://localhost:3000/',
+}));
+
+// gets the static files from the build folder
+app.get(/(.*)/, (req, res) => {
+  res.sendFile(path.join(buildPath, 'index.html'))
+})
 
 app.listen(PORT, () => {
   	console.log(`Server is online on port: ${PORT}`);
