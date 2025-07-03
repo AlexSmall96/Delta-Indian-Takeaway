@@ -29,7 +29,7 @@ app.get('/map', async (req, res) => {
 });
 
 // Define build path to render static files
-const buildPath = path.join(__dirname, '../build')
+const buildPath = path.join(__dirname, 'build')
 
 app.use(express.static(buildPath))
 
