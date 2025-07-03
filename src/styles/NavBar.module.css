@@ -4,6 +4,7 @@
     font-size: clamp(1rem, 3vw, 1.5rem);
     font-family: "PT Serif", serif!important;
     padding-bottom: 30px;
+    padding-right: 10px;
 }
 
 .grey {
