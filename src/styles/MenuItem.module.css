@@ -27,6 +27,11 @@ https://stackoverflow.com/questions/4978090/3-divs-middle-div-needs-to-be-a-vari
     text-align: left;
 }
 
+@media screen and (max-width: 576px) {
+    .itemDescription {
+        font-size: large;
+    }
+}
 .icons {
     text-align: left;
     color: rgb(211, 34, 34);
