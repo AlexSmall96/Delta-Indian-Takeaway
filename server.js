@@ -12,7 +12,7 @@ const API_KEY = process.env.STATIC_MAP_API_KEY;
 
 // Allow CORS to front end site
 app.use(cors({
-	origin: 'https://deltaindiantakeaway.onrender.com',
+	origin: 'https://delta-takeaway-static.onrender.com',
 }));
 
 // Define proxy server to get google maps image
