@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import { Navbar, Nav, Image, NavDropdown, Offcanvas, Col, Container, Row, Card} from 'react-bootstrap'
+import { Navbar, Nav, Image, Offcanvas} from 'react-bootstrap'
 import appStyles from '../App.module.css'
 import styles from '../styles/NavBar.module.css'
 import useWindowDimensions from '../hooks/useWindowDimensions';

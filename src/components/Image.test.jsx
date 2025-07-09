@@ -13,7 +13,6 @@ test('Image should be rendered with correct source, height, width and alt text.'
     render(<Image src={src}  height={100} alt='A variety of dishes from the menu'/>)
     // Find image
     const image = screen.getByRole('img', {name:'A variety of dishes from the menu'})
-    screen.debug()
     // Should have correct source, height and width
     expect(image.src).toBe(src)
     expect(image.width).toBe(100)

@@ -4,7 +4,7 @@
 import React from 'react'
 import Menu from '../pages/Menu'
 import '@testing-library/jest-dom/vitest';
-import { screen, render, cleanup, act, waitFor  } from '@testing-library/react';
+import { screen, render, cleanup, act } from '@testing-library/react';
 import { test, expect, afterEach} from 'vitest';
 import { categories, menuItems } from '../data';
 import userEvent from '@testing-library/user-event';
