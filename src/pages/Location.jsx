@@ -15,7 +15,7 @@ const Location = () => {
 	useEffect(() => {
 		const fetchMap = async () => {
 			try {
-				const response = await fetch(`https://deltaindiantakeaway.onrender.com/map?type=${type}`)
+				const response = await fetch(`https://delta-map-api.onrender.com/map?type=${type}`)
 				const blob = await response.blob();
         		const objectUrl = URL.createObjectURL(blob);
         		setMapUrl(objectUrl);
