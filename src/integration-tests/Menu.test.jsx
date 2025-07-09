@@ -4,7 +4,7 @@
 import React from 'react'
 import Menu from '../pages/Menu'
 import '@testing-library/jest-dom/vitest';
-import { screen, render, cleanup, act  } from '@testing-library/react';
+import { screen, render, cleanup, act, waitFor  } from '@testing-library/react';
 import { test, expect, afterEach} from 'vitest';
 import { categories, menuItems } from '../data';
 import userEvent from '@testing-library/user-event';
@@ -28,6 +28,9 @@ test('All categories should be displayed with NON VEGETARIANS STARTERS as defaul
     // Assert only one category is bold
     const boldCategories = container.getElementsByClassName('_selected_df6fdc')
     expect(boldCategories).toHaveLength(1)
+    // Form should not be present because screen width is not small enough
+    const select = screen.queryByRole('combobox')
+    expect(select).not.toBeInTheDocument()
 })
 
 test('Correct menu items are displayed depending on category.', async () => {
@@ -51,7 +54,7 @@ test('Correct menu items are displayed depending on category.', async () => {
     otherItems.map(item => expect(screen.queryByText(item.name)).not.toBeInTheDocument())    
 })
 
-test('When screen width goes below 768px, categories list is rendered as dropdown', () => {
+test('When screen width goes below 768px, categories list is rendered as dropdown and category can be changed.', async () => {
     // Set screen width
     act(() => {
         global.innerWidth = 700;
@@ -67,4 +70,12 @@ test('When screen width goes below 768px, categories list is rendered as dropdow
     const categoryNames = categories.map(cat => cat.name)
     const optionsText = options.map(option => option.text)
     expect(optionsText).toEqual(categoryNames)
+    // Click vegetarian starters option
+    await user.selectOptions(select, 'VEGETARIAN STARTERS');
+    // All vegetarian starters should now present
+    const vegStarters = menuItems.filter(item => item.category === 'VEGETARIAN STARTERS')
+    vegStarters.map(item => expect(screen.getByText(item.name)).toBeInTheDocument())
+    // No other menu items should be present
+    const otherItems = menuItems.filter(item => item.category !== 'VEGETARIAN STARTERS')
+    otherItems.map(item => expect(screen.queryByText(item.name)).not.toBeInTheDocument())   
 })
