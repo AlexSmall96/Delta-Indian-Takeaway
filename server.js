@@ -9,9 +9,9 @@ require('dotenv').config();
 // Google static maps api key
 const API_KEY = process.env.STATIC_MAP_API_KEY;
 
-// Allow CORS to front end site
+// Allow CORS to front end site (include both custom domain and render url)
 app.use(cors({
-	origin: 'https://delta-takeaway-static.onrender.com',
+  	origin: ['https://delta-takeaway-static.onrender.com', 'https://www.deltaindiantakeaway.co.uk']
 }));
 
 // Define proxy server to get google maps image
