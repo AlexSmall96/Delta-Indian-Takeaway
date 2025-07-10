@@ -1,5 +1,5 @@
 # Delta Indian Takeaway
-Delta is an Indian Takeaway located in Edinburgh. This repository serves as the website for the business, providing information on the menu, location, availability and means of contact.
+Delta is an Indian Takeaway located in Edinburgh, Scotland. This repository serves as the website for the business, providing information on the menu, location, availability and means of contact.
 
 ![](documentation/responsive.jpg)
 
