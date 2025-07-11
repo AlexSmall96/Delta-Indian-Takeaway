@@ -62,10 +62,14 @@ const HomePage = () => {
 								<Row className={styles.carouselChild}>
 									{/* RENDER CURRENT IMAGES */}
 									{imageSrcs.slice(srcIndex, srcIndex + step).map(
-										src =>                     
-											<Col lg={4} sm={6} xs={12} key={src}>
-												<Image src={src} height={imageHeight} alt={imageAlts.slice(srcIndex, srcIndex + step)[imageSrcs.slice(srcIndex, srcIndex + step).indexOf(src)]} />
-											</Col>
+										(src, i) => {
+											const altText = imageAlts[srcIndex + i]
+											return (
+												<Col lg={4} sm={6} xs={12} key={src}>
+													<Image src={src} height={imageHeight} alt={altText} />
+												</Col>
+											)
+										}             
 									)}	
 								</Row>
 							</Container>
