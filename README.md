@@ -117,6 +117,7 @@ Additional features of the home page were tested manually. This involved verifyi
 - Images
     - Cloudinary
     - Google Maps Static API
+    - RealFaviconGenerator
 - Development
     - VS code
     - GitHub
