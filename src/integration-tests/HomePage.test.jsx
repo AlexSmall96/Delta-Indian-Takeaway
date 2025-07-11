@@ -12,7 +12,7 @@ afterEach(() => {
     cleanup()
 })
 
-test('Correct number of images should be displayed depending on screen size.', () => {
+test('Correct total number of images should be rendered depending on screen size.', () => {
     // Render component
     render(<HomePage />)
     // Set screen width to 1000px

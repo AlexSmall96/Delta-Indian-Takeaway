@@ -80,7 +80,7 @@ Two components required data to be passed in as props and were complex enough to
 ![](documentation/testing/MenuItem.jpg)
 
 #### Integration Tests
-The two pages which involved user interactivity (Menu and Location) were tested using integration tests.
+The three pages which involved user interactivity (Menu, Location and Home page) were tested using integration tests.
 Screenshots of the test results and link to folder location are given below.
 
 [Menu.test.jsx](https://github.com/AlexSmall96/Delta-Indian-Takeaway/blob/main/src/integration-tests/Menu.test.jsx)
@@ -91,8 +91,12 @@ Screenshots of the test results and link to folder location are given below.
 
 ![](documentation/testing/Location.jpg)
 
+[HomePage.test.jsx](https://github.com/AlexSmall96/Delta-Indian-Takeaway/blob/main/src/integration-tests/Location.test.jsx)
+
+![](documentation/testing/HomePage.jpg)
+
 ### Manual Testing
-The home page was tested manually. This involved verifying that the correct number of images was displayed according to screen size and that the carousel cycled through the correct set of images. 
+Additional features of the home page were tested manually. This involved verifying that the correct number of images per carousel item was displayed according to screen size and that the carousel cycled through the correct set of images. 
 
 ![](documentation/testing/homepage.gif)
 
