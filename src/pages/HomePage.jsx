@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react"
 import Carousel from 'react-bootstrap/Carousel';
-import  { imageSrcs } from '../data'
+import  { imageSrcs, imageAlts } from '../data'
 import Image from "../components/Image";
 import useWindowDimensions from "../hooks/useWindowDimensions";
 import { Col, Container, Row } from "react-bootstrap";
@@ -11,7 +11,7 @@ const HomePage = () => {
 	// Initialise variables
 	const [index, setIndex] = useState(0) // Index for carousel
 	const [srcIndices, setSrcIndices] = useState([0, 3, 6, 9, 12]) // Indices for image sources - number of images shown in a carousel item depends on screen width
-	const [step, setStep] = useState(3)  // Step variable to choose number of images shown, can be 1,2 or 3
+	const [step, setStep] = useState(3)  // Step variable to choose number of images shown, can be 1, 2 or 3
 	const { width } = useWindowDimensions() // Screen width
 	const [imageHeight, setImageHeight] = useState(0.3 * width) // Carousel Images height/width
 
@@ -57,14 +57,14 @@ const HomePage = () => {
 				{/* CAROUSEL */}
 				<Carousel activeIndex={index} onSelect={handleSelect} data-bs-theme="dark" indicators={false}>
 					{srcIndices.map(srcIndex => 
-						<Carousel.Item>
+						<Carousel.Item key={srcIndex}>
 							<Container>
 								<Row className={styles.carouselChild}>
 									{/* RENDER CURRENT IMAGES */}
 									{imageSrcs.slice(srcIndex, srcIndex + step).map(
 										src =>                     
 											<Col lg={4} sm={6} xs={12} key={src}>
-												<Image src={src} height={imageHeight} />
+												<Image src={src} height={imageHeight} alt={imageAlts.slice(srcIndex, srcIndex + step)[imageSrcs.slice(srcIndex, srcIndex + step).indexOf(src)]} />
 											</Col>
 									)}	
 								</Row>

@@ -916,4 +916,22 @@ const imageSrcs = [
 	'https://res.cloudinary.com/dojzptdbc/image/upload/v1749028794/IMG_3576_spfzu2.jpg'
 ]
 
-export { categories, menuItems, imageSrcs } 
+const imageAlts = [
+	'Exterior of the Delta premises',
+	'A dish containing rice and chillies.',
+	'A dish consisting of spinach and paneer.',
+	'A dish containing rice.',
+	'A dish consisting of peppers, onions, mushrooms and chickens.',
+	'A dish containing a curry sauce with peppers',
+	'A dish containing orange coloured soup and almonds.',
+	'A dish containing red coloured soup, topped with and almonds and coriander.',
+	'A rice dish, two curries and a spinach and paneer dish, with celery and peppers on the table.',
+	'A chef cooking skewered meat.',
+	'A rice dish, several curries and a salad, with celery and peppers on the table.',
+	'A rice dish, several curries and a salad, with celery and peppers on the table.',
+	'A rice dish, several curries and a salad, with celery and peppers on the table.',
+	'Two menus sitting vertically on the table with several dishes.',
+	'A chef cooking skewered meat.',
+]
+
+export { categories, menuItems, imageSrcs, imageAlts } 
