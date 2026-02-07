@@ -6,6 +6,8 @@ Delta is an Indian Takeaway located in Edinburgh, Scotland. This repository serv
 ## Live Site
 https://www.deltaindiantakeaway.co.uk
 
+The website is deployed as a static site on Render. This deployment type was selected to ensure that the main site loads instantly with zero costs. This repository was also deployed as a lightweight backend to Render's free-tier web service to supply the map image using the Google Maps API. A small delay in loading the map was accepted as a deliberate trade-off to minimize hosting costs. 
+
 ## Repository
 https://github.com/AlexSmall96/Delta-Indian-Takeaway
 ## Author
