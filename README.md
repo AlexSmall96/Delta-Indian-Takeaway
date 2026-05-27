@@ -17,7 +17,18 @@ The website is deployed as a static site on Render. This deployment type was sel
 | Node | React | React Testing Library | Cloudinary
 | Express | React Bootstrap | Mock Service Worker | Render
 ## 🧪 Testing Strategy
+This project uses a combination of component testing, integration testing, and manual testing to help ensure reliability and maintainability.
 
+**Integration tests** were used to verify core user flows such as 
+- Viewing and navigating through Home page images
+- Menu interactions
+- Location page map
+
+**Component tests** were added to a selection of components to ensure content was displayed correctly based on props.
+
+Responsive behaviour and navigation/routing were tested manually during development and in the production environment.
+
+Tools used: Vitest, React Testing Library, MSW
 ## 👤Author
 Alex Small | [GitHub](https://github.com/AlexSmall96) | [LinkedIn](https://www.linkedin.com/in/alex-small-a8977116b/)
 
