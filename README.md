@@ -10,9 +10,15 @@ The website is deployed as a static site on Render. This deployment type was sel
 ### [📖 Repository](https://github.com/AlexSmall96/Delta-Indian-Takeaway/)
 
 ## 🔍 Key Features
-
+- Responsive landing page with a gallery showcasing featured dishes.
+- Interactive menu with category filtering, allergen information, and spice level indicators.
+- Contact information, opening hours, location details, and available services.
+- Fully responsive design for mobile, tablet, and desktop devices.
+- Reusable React components.
+- Clean, user-friendly location information using the Google Maps API.
+- Integration and component testing.
 ## Tech Stack
-| Backend | Frontend | Testing | Other Tools 
+| Backend | Frontend | Testing (Vitest) | Other Tools 
 | :---: | :----: | :----: |:----: | 
 | Node | React | React Testing Library | Cloudinary
 | Express | React Bootstrap | Mock Service Worker | Render
