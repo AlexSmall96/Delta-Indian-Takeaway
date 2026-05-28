@@ -10,6 +10,9 @@ jobs:
   test-and-build:
     runs-on: ubuntu-latest
 
+    env:
+        STATIC_MAP_API_KEY: ${{ secrets.STATIC_MAP_API_KEY }}
+        
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
