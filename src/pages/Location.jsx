@@ -42,7 +42,14 @@ const Location = () => {
 				<p>We are located just steps away from the famous Murrayfield and Roseburn bars as well as a short walk away from Edinburgh's Murrayfield Stadium - the home of Scottish Rugby.</p>
 			</div>
 			{/* STATIC GOOGLE MAP AS BACKGROUND IMAGE */}
-			<div className={hasLoaded? styles.backgroundMap: styles.placeholder} style={{backgroundImage: hasLoaded? `url('${mapUrl}')`: ''}}>
+			<div 
+				className={hasLoaded? styles.backgroundMap: styles.placeholder}   
+				style={
+    				hasLoaded
+      				? { backgroundImage: `url('${mapUrl}')` }
+      				: {}
+  				}
+			>
 				{hasLoaded?
 					<ButtonGroup className={styles.toggleMap}>
 						<Button variant="light" onClick={() => setType('roadmap')}>Map</Button>
