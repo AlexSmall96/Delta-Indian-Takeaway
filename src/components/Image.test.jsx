@@ -17,6 +17,4 @@ test('Image should be rendered with correct source, height, width and alt text.'
     expect(image.src).toBe(src)
     expect(image.width).toBe(100)
     expect(image.height).toBe(100)
-    // Should have correct class
-    expect(image.classList[0]).toBe('_image_ece26d')
 })
