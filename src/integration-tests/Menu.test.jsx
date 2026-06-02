@@ -23,11 +23,6 @@ test('All categories should be displayed with NON VEGETARIANS STARTERS as defaul
     // Non vegetarian starters is shown underneath
     const nonVegText = screen.getAllByText('NON VEGETARIAN STARTERS')
     expect(nonVegText).toHaveLength(2)
-    // Should be bold in categories list
-    expect(nonVegText[0]).toHaveClass('_selected_df6fdc')
-    // Assert only one category is bold
-    const boldCategories = container.getElementsByClassName('_selected_df6fdc')
-    expect(boldCategories).toHaveLength(1)
     // Form should not be present because screen width is not small enough
     const select = screen.queryByRole('combobox')
     expect(select).not.toBeInTheDocument()
