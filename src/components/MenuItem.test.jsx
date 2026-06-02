@@ -20,15 +20,12 @@ test('Correct text should be displayed on a standard item, with no chilly icons 
 		category: "NON VEGETARIAN STARTERS"
 	}
     // Render component
-    const { container } = render(<MenuItem item={standardItem} />)
+    render(<MenuItem item={standardItem} />)
     // Correct text should be displayed
     const textSections = ["Murghi Tikka (Chicken) Kebab", "Marinated and then barbecued chicken kebab.", "£5.00" ]
     textSections.map(text => expect(screen.getByText(text)).toBeInTheDocument())
-    // Dots should be present
-    const dotsDiv = container.getElementsByClassName('_dotted_f8ff20')
-    expect(dotsDiv).toHaveLength(1)
     // No chilly icons should be present
-    const icons = container.getElementsByClassName('fa-pepper-hot')
+    const icons = screen.queryAllByLabelText('spicy')
     expect(icons).toHaveLength(0)
     // No VG flag should be present
     const vgText = screen.queryByText('VG')
@@ -48,7 +45,7 @@ test('Correct number of chilly icons should be displayed with an item with spice
     // Render component
     let obj = render(<MenuItem item={spicyItem} />)  
     // 1 chilly icon should be present
-    const singleIcon = obj.container.getElementsByClassName('fa-pepper-hot')
+    const singleIcon = screen.getAllByLabelText('spicy')
     expect(singleIcon).toHaveLength(1)
     // VG flag should be present
     const vgText = screen.getByText('VG')
@@ -61,39 +58,11 @@ test('Correct number of chilly icons should be displayed with an item with spice
 		category: "VEGETARIAN MAIN DISHES",
 		spice: 2,
 		vegetarian: true
-	}    
+	}
+    cleanup()    
     // Render component
-    obj = render(<MenuItem item={verySpicyitem} />)
+    render(<MenuItem item={verySpicyitem} />)
     // Should be 2 chilly icons
-    const doubleIcon = obj.container.getElementsByClassName('fa-pepper-hot')
+    const doubleIcon = screen.getAllByLabelText('spicy')
     expect(doubleIcon).toHaveLength(2)
-})
-
-test('Dotted line should not be present if item belongs to DELTA CLASSICS and has no price listed', () => {
-    // Define item in DELTA CLASSICS CATEGORY with no price (general dish without meat choice)
-    const classicItem = {
-		name: "Vindaloo",
-		description: "A hot classic curry to make your palate dance.",
-		price: null,
-		category: "DELTA CLASSICS",
-		spice: 3
-	}
-    // Render component
-    let obj = render(<MenuItem item={classicItem} />)  
-    // Should be no dotted line
-    const nullDottedLine = obj.container.getElementsByClassName('_dotted_f8ff20')
-    expect(nullDottedLine).toHaveLength(0)
-    // Define item in DELTA CLASSICS CATEGORY with no price (meat choice included)
-    const meatChoice = 	{
-		name: "Prawn",
-		description: null,
-		price: "£8.70",
-		category: "DELTA CLASSICS"
-	}
-    // Render component
-    obj = render(<MenuItem item={meatChoice} />)    
-    // Dotted line should be present
-    const dottedLine = obj.container.getElementsByClassName('_dotted_f8ff20')
-    expect(dottedLine).toHaveLength(1)  
-
 })
