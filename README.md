@@ -1,4 +1,8 @@
 # Delta Indian Takeaway
+
+![CI](https://github.com/AlexSmall96/Delta-Indian-Takeaway/actions/workflows/ci.yml/badge.svg)
+
+
 Delta is an Indian Takeaway located in Edinburgh, Scotland. This repository serves as the website for the business, providing information on the menu, location, availability, and means of contact.
 
 ![](documentation/responsive.jpg)
