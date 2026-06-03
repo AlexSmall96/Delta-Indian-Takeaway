@@ -22,7 +22,13 @@ const MenuItem = ({item}) => {
             {/* CHILLY & VG ICONS  */}
             <p className={styles.icons}>
                 {item.spice?
-                    <span className={styles.spice}>{spiceLevels.map(level => item.spice >= level ? <i key={level} className="fa-solid fa-pepper-hot"></i>: '' )}</span>
+                    <span className={styles.spice}>
+                        {spiceLevels.map(
+                            level => item.spice >= level ? 
+                                <i key={level} aria-label='spicy' className="fa-solid fa-pepper-hot"></i>
+                            : '' 
+                        )}
+                    </span>
                 :''}
                 {item.vegetarian? 
                     <span className={styles.vegetarian}>VG</span>
