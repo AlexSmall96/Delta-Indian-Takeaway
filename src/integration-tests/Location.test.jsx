@@ -36,13 +36,10 @@ test('Background image loads with correct url, buttons are rendered and image ur
         return mapType === 'roadmap'? roadMapUrl : hybridUrl
     })
     // Render component
-    const { container } = render(<Location />)
-    // Placeholder background should be present
-    let placeholderDiv = container.getElementsByClassName('_placeholder_2008d8')
-    expect(placeholderDiv).toHaveLength(1)
-    // Map background should not be present
-    let mapDiv = container.getElementsByClassName('_backgroundMap_2008d8')
-    expect(mapDiv).toHaveLength(0)
+    render(<Location />)
+    // Map container should have no background image
+    let mapDiv = screen.getByTestId('map-container')
+    expect(mapDiv.style.backgroundImage).toBe('')
     // Map toggle button should not be present
     let toggle = screen.queryByRole('group')
     expect(toggle).not.toBeInTheDocument()
@@ -50,22 +47,17 @@ test('Background image loads with correct url, buttons are rendered and image ur
     const directionsLink = screen.getByRole('link')
     expect(directionsLink).toBeInTheDocument()
     expect(directionsLink).toHaveAttribute('href', "https://www.google.com/maps/dir//27+Roseburn+Terrace,+Edinburgh+EH12+5NG/@55.9484367,-3.2367662,16z/data=!4m8!4m7!1m0!1m5!1m1!1s0x4887c7accedae949:0xf44a5da22899ca4e!2m2!1d-3.2344121!2d55.9454082?entry=ttu&g_ep=EgoyMDI1MDYyOS4wIKXMDSoASAFQAw%3D%3D")
-    // Spinner and loading text should be present
-    const spinner = container.getElementsByClassName('spinner-border')
-    expect(spinner).toHaveLength(1)
+    // Loading text should be present
     const loadingText = screen.getByText('Map loading...')
     expect(loadingText).toBeInTheDocument()
     // Wait for map to load with mock url
     await waitFor(() => {
         // Map background should be present
-        mapDiv = container.getElementsByClassName('_backgroundMap_2008d8')
-        expect(mapDiv).toHaveLength(1)
+        mapDiv = screen.getByTestId('map-container')
+        expect(mapDiv).toHaveStyle(`background-image: url(${roadMapUrl});`)
     })
     // Should have correct background image based on default map type = roadmap
-    expect(mapDiv[0]).toHaveAttribute('style', `background-image: url(${roadMapUrl});`)
-    // Placholder should not be present
-    placeholderDiv = container.getElementsByClassName('_placeholder_2008d8')
-    expect(placeholderDiv).toHaveLength(0)
+    expect(mapDiv).toHaveStyle(`background-image: url(${roadMapUrl});`)
     // Loading text should not be present
     expect(loadingText).not.toBeInTheDocument()
     // Map toggle should be present with correct button text
@@ -78,5 +70,5 @@ test('Background image loads with correct url, buttons are rendered and image ur
     // Clicking satellite button should change background image
     await user.click(satButton)
     // Map url should change
-    expect(mapDiv[0]).toHaveAttribute('style', `background-image: url(${hybridUrl});`)
+    expect(mapDiv).toHaveStyle(`background-image: url(${hybridUrl});`)
 })

@@ -49,6 +49,7 @@ const Location = () => {
       				? { backgroundImage: `url('${mapUrl}')` }
       				: {}
   				}
+				data-testid="map-container"
 			>
 				{hasLoaded?
 					<ButtonGroup className={styles.toggleMap}>
