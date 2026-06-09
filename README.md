@@ -40,6 +40,12 @@ Responsive behaviour and navigation/routing were tested manually during developm
 
 Tools used: Vitest, React Testing Library, MSW
 
+## Future Improvements
+- Upgrade the backend hosting plan to eliminate map loading delays caused by cold starts.
+- Add an online ordering system to allow customers to place orders directly through the website.
+- Enhance the location page with interactive map functionality and directions.
+- Add end-to-end testing with Playwright to validate key user journeys.
+
 ## 💻 Setup
 1. Clone the repository
 
