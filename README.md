@@ -40,6 +40,9 @@ Responsive behaviour and navigation/routing were tested manually during developm
 
 Tools used: Vitest, React Testing Library, MSW
 
+### Continuous Integration
+A **GitHub Actions workflow** automatically runs tests and verifies that the application builds successfully on every pull request to the `main` branch. This helps catch issues early and ensures new changes do not introduce regressions or break the production build.
+
 ## Future Improvements
 - Upgrade the backend hosting plan to eliminate map loading delays caused by cold starts.
 - Add an online ordering system to allow customers to place orders directly through the website.
