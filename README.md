@@ -39,6 +39,20 @@ This project uses a combination of component testing, integration testing, and m
 Responsive behaviour and navigation/routing were tested manually during development and in the production environment.
 
 Tools used: Vitest, React Testing Library, MSW
+
+## 💻 Setup
+1. Clone the repository
+
+    ```git clone https://github.com/AlexSmall96/Delta-Indian-Takeaway ``` 
+
+2. Install dependencies:
+
+    ```npm install```
+3. Start the development server:
+
+   ```npm start```
+   
+The application uses a deployed backend service for map generation, so no local backend setup is required.
 ## 👤Author
 Alex Small | [GitHub](https://github.com/AlexSmall96) | [LinkedIn](https://www.linkedin.com/in/alex-small-a8977116b/)
 
